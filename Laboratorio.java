@@ -22,13 +22,21 @@ public class Laboratorio
         {
             Alumno alumno = alumnos.get(i);
             
-            System.out.println(alumno.dimeNombre(), alumno.dimeClave());
+            System.out.println("Nombre: "+alumno.dimeNombre()+" Clave: "+ alumno.dimeClave());
         }
     }
     
-    public void darBaja()
+    public void darBaja(int claveAlumnoBaja)
     {
-        
+        for(int i=0 ; i < alumnos.size() ; i++)
+        {
+            Alumno alumno = alumnos.get(i);
+            if(alumno.dimeClave() == claveAlumnoBaja)
+            {
+                alumnos.remove(i);
+                i = alumnos.size();
+            }   
+        }
     }
     
 }
